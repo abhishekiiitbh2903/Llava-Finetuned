@@ -1,9 +1,17 @@
-
 # Finetuned LLAVA FOR IMAGE RECEIPT ANALYSIS
+
+> **Important Note**: Ensure you have at least 8GB of GPU memory to load the quantized version of the model. The fine-tuned version of the model is available on my Hugging Face Hub repository at [Finetuned-Llava](https://huggingface.co/abhisheksinghrathore/Finetuned-Llava).
 
 ## Overview
 
 This project implements a fine-tuning approach for the Llava model using advanced techniques such as QLoRA, LoRA, and Flash Attention. Before fine-tuning, the Llava 7B model was unable to provide a JSON response detailing the contents of images. However, after fine-tuning with the Naver Clova IX CORD-v2 dataset, the model successfully generates accurate JSON responses describing what is present in images.
+
+## Jupyter Notebook Links
+
+- **Before Fine-Tuning**: [View Notebook](https://github.com/abhishekiiitbh2903/Llava-Finetuned/blob/main/Before_FineTuning.ipynb)  
+- **After Fine-Tuning**: [View Notebook](https://github.com/abhishekiiitbh2903/Llava-Finetuned/blob/main/test_finetuned_1.6_7b.ipynb)
+
+> **Project by Abhishek Singh (Guider: Farzad and Andrej)**, a final-year B.Tech CSE undergraduate at IIIT BH. I am open for collaboration and enthusiastic about working on AI and Machine Learning projects.
 
 ## Table of Contents
 
@@ -15,10 +23,8 @@ This project implements a fine-tuning approach for the Llava model using advance
   - [QLoRA Technique](#qlora-technique)
   - [LoRA Technique](#lora-technique)
   - [Flash Attention](#flash-attention)
+- [User Interface](#user-interface)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -70,15 +76,15 @@ Flash Attention is a memory-efficient attention mechanism designed to accelerate
 1. **Memory Efficiency**: Flash Attention reduces memory usage by computing attention scores more efficiently.
 2. **Speed Optimization**: It utilizes faster algorithms to calculate attention weights, which leads to quicker training iterations.
 
+## User Interface
+
+A user interface has been created for this project where the frontend is served using **Streamlit** and the backend is managed by **Flask**. This architecture was chosen to prevent the model from reloading each time an image is analyzed, thereby improving efficiency.
+
+The UI allows users to upload an image and receive the model’s analysis in JSON format. The Streamlit frontend displays the image along with the JSON output, while Flask handles the image processing and model inference in the backend.
+
 ## Installation
 
 To set up the environment, run:
 
 ```bash
 pip install -r requirements.txt
-```
-
-
-## Contributing
-
-Contributions are welcome! Please submit a pull request or open an issue for any improvements or suggestions.
